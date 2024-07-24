@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GasPapei</title>
+  <link rel="stylesheet" href="styles.css">
+<style>
+
+/* style for aboutus grids */
+  .agrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.agrid-item {
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+   .agrid {
+    grid-template-columns: 1fr;
+  }
+}
+/* style for program grids */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.grid-item {
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* style for gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 20px;;
+}
+
+.gallery_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-width: 1100px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 780px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+   </style>
+</head>
+
+<body>
+<nav>
+  <div class="navbar-header">
+    <button class="menu-toggle" onclick="toggleMobileMenu()"></button>
+  </div>
+  <ul class="menu">
+    <li><a href="index.html">Αρχική</a></li>
+    <li><a href="profile.html">Προφίλ Εταιρίας</a></li>
+    <li><a href="cost.html">Υπολογισμός Κόστους</a></li>
+    <li><a href="contact.html">Επικοινωνία</a></li>
+    <li><a href="admin.html">Σελίδα Διαχείρισης</a></li>
+  </ul>
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="index.html">Αρχική</a></li>
+      <li><a href="profile.html">Προφίλ Εταιρίας</a></li>
+      <li><a href="cost.html">Υπολογισμός Κόστους</a></li>
+      <li><a href="contact.html">Επικοινωνία</a></li>
+      <li><a href="admin.html">Σελίδα Διαχείρισης</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <section>
+    <h2>Ποιοι Είμαστε;</h2>
+    <div class="agrid">
+      <div class="agrid-item">
+        <img class="image" src="images/papei.png" alt="Desktop Image">
+        <p>Η GasPapei είναι η μεγαλύτερη εταιρία ιδιωτικού φυσικού αερίου στην Ελλάδα και ιδρύθηκε με την δέσμευση να δίνει πάντα στους καταναλωτές το φτηνότερο δυνατό φυσικό αέριο. Για αυτό και αριθμεί το 2023 τους περισσότερους πελάτες απο οποιαδήποτε άλλη εταιρία ιδιωτικής ενέργειας</p>
+      </div>
+      <div class="agrid-item">
+        <img class="image" src="images/papei.png" alt="Tablet & Mobile Image">
+        <p>Η εταιρία μας ιδρύθηκε το 2021 και απο τότε η πορεία της είναι μόνο ανοδική. Με εξαιρετικές κριτικές απο το 95% των πελατών μας συνεχίζουμε να προσφέρουμε το φθηνότερο φυσικό αέριο στην αγορά. Το προσωπικό μας είναι άριστα εκπαιδευμένο και έτοιμο να λύσει κάθε σας απορία για την ενεργειακή αγορά της Ελλάδας. </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Τα προγράμματά μας</h2>
+    <div class="grid">
+      <div class="grid-item">
+        <img class="image" src="images/oikiako.png" alt="Οικιακό Πρόγραμμα">
+        <h3>Οικιακό Πρόγραμμα</h3>
+      </div>
+      <div class="grid-item">
+        <img class="image" src="images/epaggelmatiko.png" alt="Επαγγελματικό Πρόγραμμα">
+        <h3>Επαγγελματικό Πρόγραμμα</h3>
+      </div>
+      <div class="grid-item">
+        <img class="image" src="images/foithtiko.png" alt="Φοιτητικό Πρόγραμμα">
+        <h3>Φοιτητικό Πρόγραμμα</h3>
+      </div>
+      <div class="grid-item">
+        <img class="image" src="images/agrotiko.png" alt="Πρόγραμμα για Αγρότες">
+        <h3>Πρόγραμμα για Αγρότες</h3>
+      </div>
+    </div>
+    <a class="cta-button" href="profile.html" target="_blank">Δείτε περισσότερα</a>
+  </section>
+
+  <section>
+    <h2>Responsive Image Gallery</h2>
+    <div class="gallery">
+    <div class="gallery_image">
+      <img class="image" src="images/egk1.jpg" alt="Gallery Image 1">
+    </div>
+    <div class="gallery_image">
+      <img class="image" src="images/egk2.jpg" alt="Gallery Image 2">
+    </div>
+    <div class="gallery_image">
+      <img class="image" src="images/egk3.jpg" alt="Gallery Image 3">
+    </div>
+    <div class="gallery_image">
+      <img class="image" src="images/egk4.png" alt="Gallery Image 4">
+    </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Συμβουλές Εξοικονόμησης</h2>
+    <h3>Επικεφαλίδα</h3>
+    <p>Παρακάτω θα μάθετε πως μπορείτε και εσείς να κάνετε οικονομία στο φυσικό αέριο</p>
+    <iframe class="video" src="https://www.youtube.com/embed/k5LXdeBOakQ" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <section>
+    <h2>Φόρμα Εγγραφής στο Newsletter</h2>
+    <form class="newsletter-form" action="indexdb.php" method="post">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="name">Όνομα:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <button type="submit">Εγγραφή</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="fgrid-container">
+        <div class="fgrid-item">
+            <h3>Επικοινωνία</h3>
+            <p>Διεύθυνση: Αλαμάνας 11, Αγία Βαρβάρα, Ελλάδα</p>
+            <p>Τηλέφωνο: <a href="tel:+306999999999">+306999999999></a></p>
+            <p>Email: <a href="mailto:gaspapei@gmail.com">gaspapei@gmail.com</a></p>
+        </div>
+        <div class="fgrid-item">
+            <h3>Χάρτης</h3>
+                        <iframe width="50%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%CE%B1%CE%BB%CE%B1%CE%BC%CE%AC%CE%BD%CE%B1%CF%82%2011%20%CE%B1%CE%B3%CE%B9%CE%B1%20%CE%B2%CE%B1%CF%81%CE%B2%CE%B1%CF%81%CE%B1+(My%20Business%20Name)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure distance on map</a></iframe>
+        </div>
+    </div>
+   </footer>
+
+<script src="navbarscript.js"></script>
+</body>
+</html>

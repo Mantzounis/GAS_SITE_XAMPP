@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GasPapei</title>
+  <link rel="stylesheet" href="styles.css">
+
+<style>
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="number"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+
+<body>
+<nav>
+  <div class="navbar-header">
+    <button class="menu-toggle" onclick="toggleMobileMenu()"></button>
+  </div>
+  <ul class="menu">
+    <li><a href="index.html">Αρχική</a></li>
+    <li><a href="profile.html">Προφίλ Εταιρίας</a></li>
+    <li><a href="cost.html">Υπολογισμός Κόστους</a></li>
+    <li><a href="contact.html">Επικοινωνία</a></li>
+    <li><a href="admin.html">Σελίδα Διαχείρισης</a></li>
+  </ul>
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="index.html">Αρχική</a></li>
+      <li><a href="profile.html">Προφίλ Εταιρίας</a></li>
+      <li><a href="cost.html">Υπολογισμός Κόστους</a></li>
+      <li><a href="contact.html">Επικοινωνία</a></li>
+      <li><a href="admin.html">Σελίδα Διαχείρισης</a></li>
+    </ul>
+  </div>
+</nav>
+
+<form>
+    <label for="kilowatts">Πλήθος Κιλοβατώρων:</label>
+    <input type="number" id="kilowatts" name="kilowatts" required>
+
+    <label for="days">Πλήθος Ημερών:</label>
+    <input type="number" id="days" name="days" required>
+
+    <label for="area">Μέγεθος Χώρου (τ.μ.):</label>
+    <input type="number" id="area" name="area" required>
+
+    <input type="submit" value="Υποβολή">
+</form>
+
+
+  <footer>
+    <div class="fgrid-container">
+        <div class="fgrid-item">
+            <h3>Επικοινωνία</h3>
+            <p>Διεύθυνση: Αλαμάνας 11, Αγία Βαρβάρα, Ελλάδα</p>
+            <p>Τηλέφωνο: <a href="tel:+306999999999">+306999999999></a></p>
+            <p>Email: <a href="mailto:gaspapei@gmail.com">gaspapei@gmail.com</a></p>
+        </div>
+        <div class="fgrid-item">
+            <h3>Χάρτης</h3>
+                        <iframe width="50%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%CE%B1%CE%BB%CE%B1%CE%BC%CE%AC%CE%BD%CE%B1%CF%82%2011%20%CE%B1%CE%B3%CE%B9%CE%B1%20%CE%B2%CE%B1%CF%81%CE%B2%CE%B1%CF%81%CE%B1+(My%20Business%20Name)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure distance on map</a></iframe>
+        </div>
+    </div>
+   </footer>
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Ακυρώνει την προεπιλεγμένη συμπεριφορά της φόρμας
+
+        // Ανάκτηση τιμών από τα πεδία εισαγωγής
+        var kilowatts = parseFloat(document.getElementById('kilowatts').value);
+        var days = parseFloat(document.getElementById('days').value);
+        var area = parseFloat(document.getElementById('area').value);
+
+        // Υπολογισμός κόστους δήμου
+        var municipalityCharges = area <= 50 ? 0.12 : area <= 90 ? 0.20 : 0.31;
+        var municipalityCost = area * municipalityCharges * (days / 365);
+
+        // Υπολογισμός συνολικού κόστους υπηρεσιών κοινής ωφέλειας
+        var utilityEnergyCharge, utilityServicesCharge;
+        if (kilowatts <= 1600) {
+            utilityEnergyCharge = 0.00623;
+            utilityServicesCharge = 0.01315;
+        } else if (kilowatts <= 2000) {
+            utilityEnergyCharge = 0.00768;
+            utilityServicesCharge = 0.01480;
+        } else {
+            utilityEnergyCharge = 0.00915;
+            utilityServicesCharge = 0.01625;
+        }
+        var utilitiesCost = kilowatts * utilityServicesCharge * (days / 365);
+
+        // Υπολογισμός συνολικών χρεώσεων
+        var energyCharge = kilowatts * utilityEnergyCharge;
+        var totalCharges = energyCharge;
+
+        // Υπολογισμός τελικού ποσού χρέωσης
+        var finalAmount = municipalityCost + utilitiesCost + totalCharges;
+
+        // Εμφάνιση αποτελέσματος
+        alert('Το τελικό ποσό χρέωσης είναι: ' + finalAmount.toFixed(2) + ' ευρώ.');
+    });
+</script>
+<script src="navbarscript.js"></script>
+</body>
+
+</html>

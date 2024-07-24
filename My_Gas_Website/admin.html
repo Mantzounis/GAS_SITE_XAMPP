@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GasPapei</title>
+  <link rel="stylesheet" href="styles.css">
+<style>
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#requests-table {
+    display: none;
+}
+
+.navbar-header .menu-toggle {
+  color: black;
+}
+</style>
+</head>
+
+<body>
+<nav>
+  <div class="navbar-header">
+    <button class="menu-toggle" onclick="toggleMobileMenu()"></button>
+  </div>
+  <ul class="menu">
+    <li><a href="index.html">Αρχική</a></li>
+    <li><a href="profile.html">Προφίλ Εταιρίας</a></li>
+    <li><a href="cost.html">Υπολογισμός Κόστους</a></li>
+    <li><a href="contact.html">Επικοινωνία</a></li>
+    <li><a href="admin.html">Σελίδα Διαχείρισης</a></li>
+  </ul>
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="index.html">Αρχική</a></li>
+      <li><a href="profile.html">Προφίλ Εταιρίας</a></li>
+      <li><a href="cost.html">Υπολογισμός Κόστους</a></li>
+      <li><a href="contact.html">Επικοινωνία</a></li>
+      <li><a href="admin.html">Σελίδα Διαχείρισης</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <h1>Σελίδα Διαχείρισης</h1>
+
+    <form id="login-form" action="admindb.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Σύνδεση Διαχειριστή</button>
+    </form>
+
+    <div id="requests-table">
+<table></table>
+        </div>
+
+
+  <footer>
+    <div class="fgrid-container">
+        <div class="fgrid-item">
+            <h3>Επικοινωνία</h3>
+            <p>Διεύθυνση: Αλαμάνας 11, Αγία Βαρβάρα, Ελλάδα</p>
+            <p>Τηλέφωνο: <a href="tel:+306999999999">+306999999999></a></p>
+            <p>Email: <a href="mailto:gaspapei@gmail.com">gaspapei@gmail.com</a></p>
+        </div>
+        <div class="fgrid-item">
+            <h3>Χάρτης</h3>
+                       <iframe width="50%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%CE%B1%CE%BB%CE%B1%CE%BC%CE%AC%CE%BD%CE%B1%CF%82%2011%20%CE%B1%CE%B3%CE%B9%CE%B1%20%CE%B2%CE%B1%CF%81%CE%B2%CE%B1%CF%81%CE%B1+(My%20Business%20Name)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure distance on map</a></iframe>
+        </div>
+    </div>
+   </footer>
+
+<script>
+function displayRequests(requests) {
+    var table = document.createElement('table');
+    var headers = ['ID', 'Όνομα', 'Email', 'Μήνυμα'];
+
+    // Create the table header row
+    var headerRow = document.createElement('tr');
+    for (var i = 0; i < headers.length; i++) {
+        var th = document.createElement('th');
+        th.textContent = headers[i];
+        headerRow.appendChild(th);
+    }
+    table.appendChild(headerRow);
+
+    // Create a row for each request
+    for (var j = 0; j < requests.length; j++) {
+        var request = requests[j];
+        var row = document.createElement('tr');
+        
+        var idCell = document.createElement('td');
+        idCell.textContent = j + 1; // Assign a unique ID
+        row.appendChild(idCell);
+
+        var nameCell = document.createElement('td');
+        nameCell.textContent = request.name;
+        row.appendChild(nameCell);
+
+        var emailCell = document.createElement('td');
+        emailCell.textContent = request.email;
+        row.appendChild(emailCell);
+
+        var messageCell = document.createElement('td');
+        messageCell.textContent = request.message;
+        row.appendChild(messageCell);
+
+        table.appendChild(row);
+    }
+
+    var tableContainer = document.getElementById('requests-table');
+    tableContainer.innerHTML = ''; // Clear any existing content in the table container
+    tableContainer.appendChild(table);
+}
+</script>
+<script>
+document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "admindb.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            if (response.success) {
+                displayRequests(response.requests); // Call the displayRequests function
+                document.getElementById("login-form").style.display = "none";
+                document.getElementById("requests-table").style.display = "block";
+            } else {
+                alert(response.message);
+            }
+        }
+    };
+    xhr.send("username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password));
+});
+</script>
+<script src="navbarscript.js"></script>
+</body>
+
+</html>

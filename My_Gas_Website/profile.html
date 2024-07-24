@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GasPapei</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.pgrid-item {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+
+@media screen and (max-width: 1100px) {
+  .pgrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.hgrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.hgrid-item {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+
+@media screen and (max-width: 1100px) {
+  .hgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+  </style>
+</head>
+
+<body>
+<nav>
+  <div class="navbar-header">
+    <button class="menu-toggle" onclick="toggleMobileMenu()"></button>
+  </div>
+  <ul class="menu">
+    <li><a href="index.html">Αρχική</a></li>
+    <li><a href="profile.html">Προφίλ Εταιρίας</a></li>
+    <li><a href="cost.html">Υπολογισμός Κόστους</a></li>
+    <li><a href="contact.html">Επικοινωνία</a></li>
+    <li><a href="admin.html">Σελίδα Διαχείρισης</a></li>
+  </ul>
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="index.html">Αρχική</a></li>
+      <li><a href="profile.html">Προφίλ Εταιρίας</a></li>
+      <li><a href="cost.html">Υπολογισμός Κόστους</a></li>
+      <li><a href="contact.html">Επικοινωνία</a></li>
+      <li><a href="admin.html">Σελίδα Διαχείρισης</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <section id="profile">
+   <section id="about-us">
+    <div class="container">
+      <h2>Σχετικά με εμάς</h2>
+      <div class="pgrid">
+        <div class="pgrid-item">
+          <h3>Η φιλοσοφία μας</h3>
+          <p>Η GasPapei, είναι ο κορυφαίος εναλλακτικός πάροχος ενέργειας, αποτέλεσμα της συνεργασίας των Ομίλων Ελληνικά Πετρέλαια και Edison. Με τα δυο της εργοστάσια, ΠΑΡΑΓΕΙ και ΠΡΟΜΗΘΕΥΕΙ ηλεκτρικό ρεύμα σε περισσότερα από 250.000 νοικοκυριά και επιχειρήσεις..</p>
+        </div>
+        <div class="pgrid-item">
+          <h3>Το όραμά μας</h3>
+          <p>H GasPapei αποτελεί κορυφαία εταιρεία ενέργειας, τόσο στην παραγωγή και προμήθεια ηλεκτρικού ρεύματος, όσο και στην προμήθεια φυσικού αερίου. Φιλοδοξεί να είναι πάντα ηγέτης στον κλάδο της, προσφέροντας ενεργειακά προϊόντα και υπηρεσίες υψηλών προδιαγραφών, σε ανταγωνιστικές τιμές, με σταθερότητα και συνέπεια.</p>
+        </div>
+        <div class="pgrid-item">
+          <h3>Ο στόχος μας</h3>
+          <p>Στόχος μας είναι να παρέχουμε κορυφαία εξυπηρέτηση και τις πιο ανταγωνιστικές προσφορές πάντα με τη μέγιστη αξιοπιστία.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="human-resources">
+    <div class="container">
+      <h2>Ανθρώπινο Δυναμικό</h2>
+      <div class="hgrid">
+        <div class="hgrid-item">
+          <h3>Τμήμα Υποστήριξης</h3>
+          <p>Το τμήμα υποστήριξης της GasPapei είναι επανδρωμένο με εργαζόμενους που είναι ειδικοί σε κάθε τομέα της αγοράς του φυσικού αερίου και είναι πρόθυμοι να απαντήσουν ότι απορείες και να χαμηλώσουν τον λογαριασμό φυσικού αερίου σας.</p>
+        </div>
+        <div class="hgrid-item">
+          <h3>Τμήμα Πωλήσεων</h3>
+          <p>Το τμήμα πωλήσεων μας είναι εδώ για να βρεί το σωστό πρόγραμμα για εσάς. Κάθε πελάτης της GasPapei έχει στη διάθεση του έναν προσωπικό σύμβουλο φυσικού αερίου για να βρεί το πιο οικονομικό πρόγραμμα βάση των απαιτήσεων του και της κατανάλωσης που κανει.</p>
+        </div>
+        <div class="hgrid-item">
+          <h3>Τμήμα Βλαβών</h3>
+          <p>Στο τμήμα βλαβών μας δουλεύουν καταξιωμένοι τεχνικοί στον χώρο της ενέργειας που θα είναι πάντα εντώς 1 εργάσιμης στον χώρο σας αν υπάρξει το οποιοδήποτε θέμα στην παροχή φυσικού αερίου σας.</p>
+        </div>
+        <div class="hgrid-item">
+          <h3>Λογιστήριο</h3>
+          <p>Το λογιστήριο μας φροντίζει κάθε πελάτης να λαμβάνει στην ώρα του τους λογαριασμούς του και να ενημερώνεται άμεσα για οποιαδήποτε εκρεμμότητα τυχών υπάρξει.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="natural-gas-cost">
+    <div class="container">
+      <h2>Υπολογισμός Κόστους Φυσικού Αερίου</h2>
+      <p>Κάντε κλικ στο κουμπί παρακάτω για να μεταβείτε στον υπολογισμό κόστους.</p>
+      <a href="cost.html" class="cta-button" target="cost.html">Υπολογισμός</a>
+    </div>
+  </section>
+  <footer>
+    <div class="fgrid-container">
+        <div class="fgrid-item">
+            <h3>Επικοινωνία</h3>
+            <p>Διεύθυνση: Αλαμάνας 11, Αγία Βαρβάρα, Ελλάδα</p>
+            <p>Τηλέφωνο: <a href="tel:+306999999999">+306999999999></a></p>
+            <p>Email: <a href="mailto:gaspapei@gmail.com">gaspapei@gmail.com</a></p>
+        </div>
+        <div class="fgrid-item">
+            <h3>Χάρτης</h3>
+                       <iframe width="50%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%CE%B1%CE%BB%CE%B1%CE%BC%CE%AC%CE%BD%CE%B1%CF%82%2011%20%CE%B1%CE%B3%CE%B9%CE%B1%20%CE%B2%CE%B1%CF%81%CE%B2%CE%B1%CF%81%CE%B1+(My%20Business%20Name)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure distance on map</a></iframe>
+        </div>
+    </div>
+   </footer>
+<script src="navbarscript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GasPapei</title>
+  <link rel="stylesheet" href="styles.css">
+<style>
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="navbar-header">
+    <button class="menu-toggle" onclick="toggleMobileMenu()"></button>
+  </div>
+  <ul class="menu">
+    <li><a href="index.html">Αρχική</a></li>
+    <li><a href="profile.html">Προφίλ Εταιρίας</a></li>
+    <li><a href="cost.html">Υπολογισμός Κόστους</a></li>
+    <li><a href="contact.html">Επικοινωνία</a></li>
+    <li><a href="admin.html">Σελίδα Διαχείρισης</a></li>
+  </ul>
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="index.html">Αρχική</a></li>
+      <li><a href="profile.html">Προφίλ Εταιρίας</a></li>
+      <li><a href="cost.html">Υπολογισμός Κόστους</a></li>
+      <li><a href="contact.html">Επικοινωνία</a></li>
+      <li><a href="admin.html">Σελίδα Διαχείρισης</a></li>
+    </ul>
+  </div>
+</nav>
+
+ <h1>Επικοινωνία</h1>
+
+    <h2>Φόρμα Αιτημάτων</h2>
+    <form class="request-form" action="contactdb.php" method="post">
+        <label for="name">Όνομα:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Τηλέφωνο:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="department">Αρμόδιο Τμήμα:</label>
+        <select id="department" name="department" required>
+            <option value="">Επιλέξτε τμήμα</option>
+            <option value="Τμήμα 1">Οικιακό Πρόγραμμα</option>
+            <option value="Τμήμα 2">Επαγγελματικό Πρόγραμμα</option>
+            <option value="Τμήμα 3">Φοιτητικό Πρόγραμμα</option>
+            <option value="Τμήμα 4">Πρόγραμμα για Αγρότες</option>
+        </select>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Θέμα:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Μήνυμα:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <input type="submit" value="Υποβολή">
+    </form>
+
+    <h2>Στοιχεία επικοινωνίας</h2>
+    <p>Διεύθυνση: Αλαμάνας 11, Αγία Βαρβάρα, Ελλάδα</p>
+    <p>Τηλέφωνο: <a href="tel:+306999999999">+306999999999></a></p>
+    <p>Email: <a href="mailto:gaspapei@gmail.com">gaspapei@gmail.com</a></p>
+
+    <h2>Χάρτης Google Maps</h2>
+                <iframe width="60%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%CE%B1%CE%BB%CE%B1%CE%BC%CE%AC%CE%BD%CE%B1%CF%82%2011%20%CE%B1%CE%B3%CE%B9%CE%B1%20%CE%B2%CE%B1%CF%81%CE%B2%CE%B1%CF%81%CE%B1+(My%20Business%20Name)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure distance on map</a></iframe>
+  </section>
+
+  <footer>
+    <div class="fgrid-container">
+        <div class="fgrid-item">
+            <h3>Επικοινωνία</h3>
+            <p>Διεύθυνση: Αλαμάνας 11, Αγία Βαρβάρα, Ελλάδα</p>
+            <p>Τηλέφωνο: <a href="tel:+306999999999">+306999999999></a></p>
+            <p>Email: <a href="mailto:gaspapei@gmail.com">gaspapei@gmail.com</a></p>
+        </div>
+        <div class="fgrid-item">
+            <h3>Χάρτης</h3>
+            <iframe width="50%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%CE%B1%CE%BB%CE%B1%CE%BC%CE%AC%CE%BD%CE%B1%CF%82%2011%20%CE%B1%CE%B3%CE%B9%CE%B1%20%CE%B2%CE%B1%CF%81%CE%B2%CE%B1%CF%81%CE%B1+(My%20Business%20Name)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure distance on map</a></iframe>
+        </div>
+    </div>
+   </footer>
+<script src="navbarscript.js"></script>
+</body>
+
+</html>
